@@ -6,7 +6,7 @@ const jwt = require('jsonwebtoken');
 const config = require('config');
 const { check, validationResult } = require('express-validator')
 
-const User = require('../../models/user')
+const User = require('../../models/User')
 
 // @router   POST api/users
 // @desc     Register user
@@ -70,7 +70,7 @@ router.post('/', [
                 config.get('jwtToken'),
                 { expiresIn: 360000 },
                 (err, token) => {
-                    if(err) throw err;
+                    if(err) throw err
                     res.json({ token });
                 }
             );
