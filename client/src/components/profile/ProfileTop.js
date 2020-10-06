@@ -7,7 +7,7 @@ const ProfileTop = ({ profile: {
     location,
     website,
     social,
-    user: { name, avatar}
+    user: { name, avatar }
 } }) => {
 
     const urlToRender = (link) => {
