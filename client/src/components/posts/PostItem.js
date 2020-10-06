@@ -11,7 +11,7 @@ const PostItem = ({ like, dislike, deletePost, auth, post: { _id, text, name, av
         <Fragment>
             <div className='post bg-white p-1 my-1'>
                 <div>
-                    <Link to='/profile'>
+                    <Link to={`/profile/${user}`}>
                         <img className='round-img' src={avatar} alt='avatar' />
                         <h4>{name}</h4>
                     </Link>
