@@ -36,7 +36,7 @@ router.post('/', [
             }
 
             // Get user's gravatar
-            const avatar = normalizeUrl(
+            const avatar = normalize(
                 gravatar.url(email, {
                     // size
                     s: '200',
