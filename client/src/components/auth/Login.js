@@ -25,6 +25,13 @@ const Login = ({ login, isAuthenticated }) => {
         return <Redirect to='/dashboard' />
     }
 
+    const onClick = () => {
+        setFormData({
+            email: 'test@test.com',
+            password: '123456'
+        })
+    }
+
     return (
         <Fragment>
         <h1 className="large text-primary">Sign In</h1>
@@ -47,6 +54,9 @@ const Login = ({ login, isAuthenticated }) => {
             </form>
             <p className="my-1">
                 Don't have an account? <Link to='/register'>Sign Up</Link>
+            </p>
+            <p className="my-1">
+                <button className='btn btn-primary my-1' onClick={onClick}>Sign in with test account</button>
             </p>
         </Fragment>
     )
