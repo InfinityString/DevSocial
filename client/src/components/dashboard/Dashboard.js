@@ -1,17 +1,24 @@
 import React, { useEffect, Fragment } from 'react'
 import { Link } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import { connect } from 'react-redux'
+import { connect, useDispatch } from 'react-redux'
 import Spinner from '../layout/Spinner'
 import DashboardActions from './DashboardActions'
 import Experience from './Experience'
 import Education from './Education'
 import { deleteAccount, getCurrentProfile } from '../../actions/profile'
+import { setAlert } from '../../actions/alert'
 
 const Dashboard = ({ getCurrentProfile, deleteAccount, auth: { user }, profile: { profile, loading } }) => {
     useEffect(() => {
         getCurrentProfile()
     }, [getCurrentProfile])
+
+    const dispatch = useDispatch()
+
+    const handleClick = () => {
+        user.email === 'test@test.com' ? dispatch(setAlert('You cant delete the test account', 'danger')) : deleteAccount() 
+    }
 
     return loading && profile === null ? <Spinner /> : <Fragment>
         <h1 className="large text-primary">Dashboard</h1>
@@ -33,7 +40,7 @@ const Dashboard = ({ getCurrentProfile, deleteAccount, auth: { user }, profile: 
             </Fragment>
         )}
         <div className="my-2">
-            <button onClick={() => deleteAccount()} className="btn btn-danger">
+            <button onClick={handleClick} className="btn btn-danger">
                 <i className="fas fa-user-minus"></i> Delete My Account
             </button>
         </div>
