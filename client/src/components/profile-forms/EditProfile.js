@@ -39,7 +39,8 @@ const EditProfile = ({ profile: { profile, loading }, createProfile, getCurrentP
             youtube: loading || !profile.social ? '' : profile.social.youtube,
             instagram: loading || !profile.social ? '' : profile.social.instagram
         })
-    }, [loading, getCurrentProfile, profile])
+        // eslint-disable-next-line
+    }, [loading, getCurrentProfile])
 
     const {
         company,
@@ -56,7 +57,11 @@ const EditProfile = ({ profile: { profile, loading }, createProfile, getCurrentP
         instagram
     } = formData
 
-    const onChange = e => setFormData({ ...formData, [e.target.name]: e.target.value })
+    const onChange = (e) => {
+        console.log(`${e.target.name}:`, e.target.value)
+        setFormData({ ...formData, [e.target.name]: e.target.value })
+        console.log(e.target.value)
+    }
 
     const onSubmit = e => {
         e.preventDefault()

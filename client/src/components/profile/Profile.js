@@ -30,7 +30,7 @@ const Profile = ({ getProfileById, profile: { profile, loading }, auth, match })
                     {profile.experience.length > 0 ? (
                         <Fragment>
                             {profile.experience.map(experience => (
-                                <ProfileExperience key={experience._id} experience={experience} />
+                                <ProfileExperience key={`experience-${experience._id}`} experience={experience} />
                             ))}
                         </Fragment>
                         ) : (
@@ -42,7 +42,7 @@ const Profile = ({ getProfileById, profile: { profile, loading }, auth, match })
                     {profile.education.length > 0 ? (
                         <Fragment>
                             {profile.education.map(education => (
-                                <ProfileEducation key={education._id} education={education} />
+                                <ProfileEducation key={`education-${education._id}`} education={education} />
                             ))}
                         </Fragment>
                         ) : (
