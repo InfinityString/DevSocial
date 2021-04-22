@@ -14,7 +14,7 @@ Use [npm](https://nodejs.org/en/) to install and start server from root folder.
 npm run packages
 ```
 
-Obtain github client id and access token 
+Obtain github client id and access token [here](https://docs.github.com/en/github/authenticating-to-github/creating-a-personal-access-token)
 
  --- edit line 294 in routes/api/profile.js as follows :
 ```bash
