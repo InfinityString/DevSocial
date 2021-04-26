@@ -1,6 +1,6 @@
 # DevSocial
 
-[Live Demo](https://polar-beach-44075.herokuapp.com/)
+[Live Demo](https://d-social.herokuapp.com)
 
 A Social media platform to connect software developers to each other from all over the world
 
